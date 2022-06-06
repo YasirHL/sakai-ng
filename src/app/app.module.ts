@@ -137,6 +137,7 @@ import { ProductService } from './service/productservice';
 import { MenuService } from './service/app.menu.service';
 import { ConfigService } from './service/app.config.service';
 import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AccessComponent } from './components/access/access.component';
@@ -270,6 +271,7 @@ import { AccessComponent } from './components/access/access.component';
         SeatComponent,
         LandingComponent,
         LoginComponent,
+        SignupComponent,
         ErrorComponent,
         NotfoundComponent,
         AccessComponent,

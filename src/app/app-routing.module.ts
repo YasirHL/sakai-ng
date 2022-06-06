@@ -25,6 +25,7 @@ import { TimelineComponent } from './components/timeline/timeline.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AccessComponent } from './components/access/access.component';
@@ -61,6 +62,7 @@ import { AccessComponent } from './components/access/access.component';
             },
             {path:'pages/landing', component: LandingComponent},
             {path:'pages/login', component: LoginComponent},
+            {path:'pages/signup', component: SignupComponent},
             {path:'pages/error', component: ErrorComponent},
             {path:'pages/notfound', component: NotfoundComponent},
             {path:'pages/access', component: AccessComponent},

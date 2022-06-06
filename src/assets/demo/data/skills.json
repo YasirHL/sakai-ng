@@ -1,0 +1,13 @@
+{
+    "data": [ 
+        {"name": "AV"}, 
+        {"name": "Electrical"}, 
+        {"name": "Plumber"}, 
+        {"name": "Smart Home"}, 
+        {"name": "Handyman"}, 
+        {"name": "Security"},
+        {"name": "Gas"},      
+        {"name": "Information Technology"},
+        {"name": "EV Charger"}
+    ]
+}

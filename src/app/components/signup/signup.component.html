@@ -1,0 +1,93 @@
+<div class="surface-0 flex align-items-center justify-content-center overflow-hidden">
+    <div class="grid justify-content-center p-1 lg:p-0" style="min-width:80%">
+        <div class="col-12 mt-1 xl:mt-0 text-center">
+            <img src="assets/layout/images/{{config.dark ? 'logo-white' : 'logo-dark'}}.svg" alt="Sakai logo"
+                class="mb-1" style="width:81px; height:60px;">
+        </div>
+        <div class="col-6 xl:col-6"
+            style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 243, 114, 0) 30%);">
+            <div class="h-full w-full m-0 py-5 px-4"
+                style="border-radius:53px; background: linear-gradient(180deg, var(--surface-50) 38.9%, var(--surface-0));">
+                <div class="text-center mb-1">
+                    <div class="text-900 text-4xl font-medium mb-1">Create New Account</div>
+                    <span class="text-900 text-2xl font-medium">Sign up to continue</span>
+                </div>
+                <div class="p-fluid p-formgrid grid mt-5">
+                    <div class="field col-12 md:col-6">
+                        <label htmlFor="firstname">Firstname <span class="mandatory">*</span></label>
+                        <input pInputText id="firstname" type="text" placeholder="Enter First Name*" />
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label htmlFor="lastname">Lastname <span class="mandatory">*</span></label>
+                        <input pInputText id="lastname" type="text" placeholder="Enter Last Name*" />
+                    </div>
+                    <div class="field col-12 md:col-4">
+                        <label htmlFor="email">Email <span class="mandatory">*</span></label>
+                        <input pInputTextarea id="email" type="email" placeholder="Enter Email Address*" />
+                    </div>
+                    <div class="field col-12 md:col-4">
+                        <label htmlFor="mobile">Mobile <span class="mandatory">*</span></label>
+                        <input pInputText id="mobile" type="number" placeholder="Enter Mobile Number*" />
+                    </div>
+                    <div class="field col-12 md:col-4">
+                        <label htmlFor="postalcode">Postal Code <span class="mandatory">*</span></label>
+                        <input pInputText id="postalcode" type="text" placeholder="Enter Postal Code*" />
+                    </div>
+                    <div class="field col-12 md:col-4">
+                        <label htmlFor="address">Address <span class="mandatory">*</span></label>
+                        <input pInputText id="address" type="text" placeholder="Enter your address*" />
+                    </div>
+                    <div class="field col-12 md:col-4">
+                        <label htmlFor="city">City <span class="mandatory">*</span></label>
+                        <input pInputText id="city" type="text" placeholder="Enter your city*" />
+                    </div>
+                    <div class="field col-12 md:col-4">
+                        <label htmlFor="country">Country <span class="mandatory">*</span></label>
+                        <input pInputText id="country" type="text" placeholder="Enter your country*" />
+                    </div>
+
+                    <div class="field col-12 md:col-6">
+                        <label htmlFor="firstname">Password <span class="mandatory">*</span></label>
+                        <p-password id="password1" [(ngModel)]="password" placeholder="Password" [toggleMask]="true" styleClass="w-full"></p-password>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label htmlFor="confirmpassword">Confirm Password <span class="mandatory">*</span></label>
+                        <p-password type="password" id="confirmpassword" [(ngModel)]="confirmPassword" [toggleMask]="true" placeholder="Confirm Password" styleClass="w-full"></p-password>
+                    </div>
+                    <div class="field col-12 md:col-12">
+                        <label htmlFor="skills">Select your core skill(s)<span class="mandatory">*</span></label>
+                        <p-multiSelect [options]="skills" [(ngModel)]="selectedSkills" defaultLabel="Select the Skills*"
+                            optionLabel="name" class="multiselect-custom">
+                            <ng-template let-value pTemplate="selectedItems">
+                                <div class="country-item country-item-value inline-flex align-items-center py-1 px-2 bg-primary text-primary border-round mr-2"
+                                    *ngFor="let option of selectedSkills">
+                                    <div>{{option.name}}</div>
+                                </div>
+                                <div *ngIf="!selectedMulti || selectedMulti.length === 0" class="country-placeholder">
+                                    Select your Skills here
+                                </div>
+                            </ng-template>
+                            <ng-template let-skill pTemplate="item">
+                                <div class="flex align-items-center country-item">
+                                    <div>{{skill.name}}</div>
+                                </div>
+                            </ng-template>
+                        </p-multiSelect>
+                    </div>
+
+                    <div class="col-12 md:col-12 field-checkbox mb-0">
+                        <p-checkbox name="agreement" value="agreement" [(ngModel)]="valCheck" id="agreement">
+                        </p-checkbox>
+                        <label for="agreement">We will contact you via email, sms or phone.</label>
+                    </div>
+
+
+                    <div class="field col-12 md:col-12">
+                        <button pButton pRipple label="Sign Up" class="w-full p-3 text-xl"></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

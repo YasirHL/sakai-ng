@@ -20,6 +20,8 @@
         "@angular/platform-browser-dynamic": "~13.0.0",
         "@angular/router": "~13.0.0",
         "chart.js": "^3.3.2",
+        "module": "^1.2.5",
+        "node": "^17.7.2",
         "primeflex": "^3.1.0",
         "primeicons": "5.0.0",
         "primeng": "^13.1.0",
