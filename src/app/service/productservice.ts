@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map, Observable } from 'rxjs';
 
 import { Product } from '../api/product';
 
@@ -13,6 +14,12 @@ export class ProductService {
         .toPromise()
         .then(res => res.data as Product[])
         .then(data => data);
+    }
+
+
+    async getProductById(id: any)
+    {
+        return (await this.getProducts()).find((result) => result.id === id);
     }
 
     getProducts() {

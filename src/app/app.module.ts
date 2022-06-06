@@ -142,6 +142,10 @@ import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AccessComponent } from './components/access/access.component';
 
+import { UserProfileDetailComponent } from './components/user-profile-detail/user-profile-detail';
+import { JobsListComponent } from './components/jobs/jobs-list.component';
+import { JobsDetailComponent } from './components/jobsdetail/jobs-detail.component';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -231,6 +235,7 @@ import { AccessComponent } from './components/access/access.component';
         VirtualScrollerModule,
         AppCodeModule,
         StyleClassModule,
+
     ],
     declarations: [
         AppComponent,
@@ -275,6 +280,9 @@ import { AccessComponent } from './components/access/access.component';
         ErrorComponent,
         NotfoundComponent,
         AccessComponent,
+        UserProfileDetailComponent,
+        JobsListComponent,
+        JobsDetailComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

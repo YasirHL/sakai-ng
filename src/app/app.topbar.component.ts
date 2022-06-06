@@ -24,7 +24,7 @@ export class AppTopBarComponent {
                 separator: true
             },
             {
-                label: 'Edit Profile', icon: 'pi pi-cog'
+                label: 'Edit Profile', icon: 'pi pi-cog', routerLink:'../pages/login'
             },
             {
                 label: 'Logout', icon: 'pi pi-fw pi-sign-out'

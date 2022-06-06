@@ -29,6 +29,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AccessComponent } from './components/access/access.component';
+import { UserProfileDetailComponent } from './components/user-profile-detail/user-profile-detail';
+import { JobsListComponent } from './components/jobs/jobs-list.component';
+import { JobsDetailComponent } from './components/jobsdetail/jobs-detail.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -36,6 +39,10 @@ import { AccessComponent } from './components/access/access.component';
                 path: '', component: AppMainComponent,
                 children: [
                     {path: '', component: DashboardComponent},
+                    {path: 'profile', component: UserProfileDetailComponent},
+                    {path: 'jobslist', component: JobsListComponent},
+                    {path: 'jobsdetail/:id', component: JobsDetailComponent},
+
                     {path: 'uikit/formlayout', component: FormLayoutComponent},
                     {path: 'uikit/input', component: InputComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelComponent},

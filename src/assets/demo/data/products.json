@@ -2,27 +2,29 @@
 	"data": [
 		{
 			"id": "1000",
-			"code": "f230fh0g3",
-			"name": "Bamboo Watch",
+			"code": "SO15 2GB",
+			"name": "Wireless Home Network Setup - B079Y8GCPH",
 			"description": "Product Description",
 			"image": "bamboo-watch.jpg",
 			"price": 65,
 			"category": "Accessories",
 			"quantity": 24,
-			"inventoryStatus": "INSTOCK",
-			"rating": 5
+			"inventoryStatus": "Pending",
+			"rating": 5,
+			"date": "6-6-2022"
 		},
 		{
 			"id": "1001",
 			"code": "nvklal433",
-			"name": "Black Watch",
+			"name": "TV Wall Mounting - Up to 50 Inch, Cable in Cable Cover",
 			"description": "Product Description",
 			"image": "black-watch.jpg",
 			"price": 72,
 			"category": "Accessories",
 			"quantity": 61,
 			"inventoryStatus": "OUTOFSTOCK",
-			"rating": 4
+			"rating": 4,
+			"date": "7-7-2022"
 		},
 		{
 			"id": "1002",
