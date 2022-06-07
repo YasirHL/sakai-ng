@@ -24,10 +24,10 @@ export class AppTopBarComponent {
                 separator: true
             },
             {
-                label: 'Edit Profile', icon: 'pi pi-cog', routerLink:'../pages/login'
+                label: 'Edit Profile', icon: 'pi pi-cog', routerLink:'../profile'
             },
             {
-                label: 'Logout', icon: 'pi pi-fw pi-sign-out'
+                label: 'Logout', icon: 'pi pi-fw pi-sign-out', routerLink:'../pages/login'
             }
         ];
     }

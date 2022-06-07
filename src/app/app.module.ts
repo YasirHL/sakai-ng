@@ -145,6 +145,7 @@ import { AccessComponent } from './components/access/access.component';
 import { UserProfileDetailComponent } from './components/user-profile-detail/user-profile-detail';
 import { JobsListComponent } from './components/jobs/jobs-list.component';
 import { JobsDetailComponent } from './components/jobsdetail/jobs-detail.component';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
     imports: [
@@ -287,7 +288,7 @@ import { JobsDetailComponent } from './components/jobsdetail/jobs-detail.compone
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, MenuService, ConfigService
+        PhotoService, ProductService, MenuService, ConfigService, MessageService
     ],
     bootstrap: [AppComponent]
 })

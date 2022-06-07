@@ -1,8 +1,88 @@
 <div class="grid">
     <div class="col-12">
-        <div class="card">
-            <h4>Empty Page</h4>
-            <p>This is your empty page template to start building beautiful applications.</p>
-        </div>
-    </div>
+
+		<div class="card">
+			<h5>Job Details</h5>						
+		
+					<div class="col-12 md:col-12">
+						<div class="card m-1 border-1 surface-border">
+							<div class="flex align-items-center justify-content-between">
+								<div class="flex align-items-center">
+									<i class="pi pi-compass mr-2 text-orange-500"></i>
+                               
+                                    <span class="font-semibold text-orange-500">Postal Code: SO15 2GB</span>
+								</div>
+                                <span class=" font-semibold text-orange-500 "><i class="pi pi-calendar mr-1"></i> Created Date: 6-6-2022</span>
+								
+							</div>
+							<div class="text-left">
+								
+								<div class="text-2xl font-bold">Wireless Home Network Setup - B079Y8GCPH</div>
+								<div class="mb-3">Product Description</div>
+
+							</div>
+							<div class="flex align-items-center justify-content-between">
+								<span class="text-2xl font-semibold">$65</span>
+								<p-button icon="pi pi-eye" label="Bid for this work" (click)="display=true"></p-button>
+							</div>
+						</div>
+					</div>
+	
+
+		
+		</div>
+	</div>
+
+
 </div>
+
+
+<p-dialog header="Give us up to 3 alternatives dates." [(visible)]="display" modal="modal" showEffect="fade" [style]="{width: '60vw'}" [breakpoints]="{'960px': '75vw'}">
+    <div class="col-12 md:col-12">
+			
+		<div class="card p-fluid">
+			<h5></h5>
+            <h6 class="text-orange-500">As a priority, the lowest offers on the sooner dates will be shown to the customer.</h6>
+			<div class="p-formgrid grid">
+				
+				<div class="field col">
+					<label htmlFor="startdate">Start Date & Time<span class="mandatory">*</span></label>
+					<input pInputText id="startdate" type="datetime-local" />
+				</div>
+                <div class="field col">
+					<label htmlFor="price">Price<span class="mandatory">*</span></label>
+                    <p-inputNumber mode="decimal" id="price" value="65"></p-inputNumber>
+				</div>
+
+            </div>
+
+                <div class="p-formgrid grid">
+                <div class="field col">
+					<label htmlFor="startdate">Start Date & Time<span class="mandatory">*</span></label>
+					<input pInputText id="startdate" type="datetime-local" />
+				</div>
+                <div class="field col">
+					<label htmlFor="price">Price<span class="mandatory">*</span></label>
+                    <p-inputNumber mode="decimal" id="price" value="65"></p-inputNumber>
+				</div>
+
+                </div>
+
+                <div class="p-formgrid grid">
+
+                <div class="field col">
+					<label htmlFor="startdate">Start Date & Time<span class="mandatory">*</span></label>
+					<input pInputText id="startdate" type="datetime-local" />
+				</div>
+                <div class="field col">
+					<label htmlFor="price">Price<span class="mandatory">*</span></label>
+                    <p-inputNumber mode="decimal" id="price" value="65"></p-inputNumber>
+				</div>               
+
+			</div>
+		</div>
+	</div>
+    <ng-template pTemplate="footer">
+            <button pButton icon="pi pi-check" (click)="display=false" label="Submit" class="p-button-outlined"></button>
+    </ng-template>
+</p-dialog>

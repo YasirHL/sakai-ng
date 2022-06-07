@@ -4,6 +4,7 @@ import { AppConfig } from '../../api/appconfig';
 import { Subscription } from 'rxjs';
 import { CountryService } from 'src/app/service/countryservice';
 import { SkillsService } from 'src/app/service/skills.service';
+import { MessageService, SelectItem } from 'primeng/api';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -41,7 +42,12 @@ export class SignupComponent implements OnInit, OnDestroy {
   
   subscription: Subscription;
 
-  constructor(public configService: ConfigService, private skillService: SkillsService,){ }
+  radious: SelectItem[];
+  selectedDrop: SelectItem;
+
+  constructor(public configService: ConfigService, 
+    private skillService: SkillsService
+    ){ }
 
   ngOnInit(): void {
     this.skillService.getSkills().then(skills => {
@@ -52,7 +58,17 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.subscription = this.configService.configUpdate$.subscribe(config => {
       this.config = config;
     });
+
+
+    this.radious = [
+      {label: '20 km', value: {id: 1, name: '20 km', code: 'NY'}},
+      {label: '30 km', value: {id: 2, name: '30 km', code: 'RM'}},
+      {label: '40 km', value: {id: 3, name: '40 km', code: 'LDN'}},
+      {label: '50 km', value: {id: 4, name: '50 km', code: 'IST'}},
+      {label: '60 km', value: {id: 5, name: '60 km', code: 'PRS'}}
+  ];
   }
+
 
   ngOnDestroy(): void {
     if(this.subscription){
