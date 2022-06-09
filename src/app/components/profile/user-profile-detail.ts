@@ -10,6 +10,9 @@ export class UserProfileDetailComponent implements OnInit{
     uploadedFiles: any[] = [];
     skills: any[];
     selectedSkills: string[] = [];
+    displayDetail: boolean;
+    displayProfile: boolean;
+    displayDocument: boolean;
 
     constructor(
         private skillService: SkillsService,
