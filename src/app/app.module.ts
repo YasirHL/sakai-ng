@@ -142,7 +142,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AccessComponent } from './components/access/access.component';
 
-import { UserProfileDetailComponent } from './components/user-profile-detail/user-profile-detail';
+import { UserProfileDetailComponent } from './components/profile/user-profile-detail';
 import { JobsListComponent } from './components/jobs/jobs-list.component';
 import { JobsDetailComponent } from './components/jobsdetail/jobs-detail.component';
 import { MessageService } from 'primeng/api';
