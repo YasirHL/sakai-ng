@@ -15,9 +15,13 @@ import { AppMainComponent } from './app.main.component';
 			<a [attr.href]="item.url" (click)="itemClick($event)" [ngClass]="item.class"
 			   *ngIf="(!item.routerLink || item.items) && item.visible !== false"
 			   [attr.target]="item.target" [attr.tabindex]="0" [attr.aria-label]="item.label" role="menuitem" pRipple>
-				<i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
+				
+               <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
+
 				<span>{{item.label}}</span>
+
 				<span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
+                
 				<i class="pi pi-fw {{active ? 'pi-angle-up' : 'pi-angle-down'}} ml-auto" *ngIf="item.items"></i>
 			</a>
 			<a (click)="itemClick($event)" *ngIf="(item.routerLink && !item.items) && item.visible !== false" [ngClass]="item.class"

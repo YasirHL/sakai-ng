@@ -1,6 +1,6 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './subcontractor/dashboard/dashboard.component';
 import { FormLayoutComponent } from './components/formlayout/formlayout.component';
 import { PanelsComponent } from './components/panels/panels.component';
 import { OverlaysComponent } from './components/overlays/overlays.component';
@@ -24,14 +24,14 @@ import { InvalidStateComponent } from './components/invalidstate/invalidstate.co
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { LandingComponent } from './components/landing/landing.component';
-import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { SignupComponent } from './authentication/signup/signup.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AccessComponent } from './components/access/access.component';
 import { UserProfileDetailComponent } from './components/profile/user-profile-detail';
-import { JobsListComponent } from './components/jobs/jobs-list.component';
-import { JobsDetailComponent } from './components/jobsdetail/jobs-detail.component';
+import { JobsListComponent } from './subcontractor/jobs/jobs-list.component';
+import { JobsDetailComponent } from './subcontractor/jobsdetail/jobs-detail.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -42,7 +42,6 @@ import { JobsDetailComponent } from './components/jobsdetail/jobs-detail.compone
                     {path: 'profile', component: UserProfileDetailComponent},
                     {path: 'jobslist', component: JobsListComponent},
                     {path: 'jobsdetail/:id', component: JobsDetailComponent},
-
                     {path: 'uikit/formlayout', component: FormLayoutComponent},
                     {path: 'uikit/input', component: InputComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelComponent},

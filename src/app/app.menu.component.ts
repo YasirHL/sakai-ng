@@ -4,9 +4,23 @@ import { AppMainComponent } from './app.main.component';
 @Component({
     selector: 'app-menu',
     template: `
-        <div class="layout-menu-container">
+        <div class="layout-menu-container" *ngIf="isSubcontractor">
             <ul class="layout-menu" role="menu" (keydown)="onKeydown($event)">
                 <li app-menu class="layout-menuitem-category" *ngFor="let item of model; let i = index;" [item]="item" [index]="i" [root]="true" role="none">
+                    <div class="layout-menuitem-root-text" [attr.aria-label]="item.label">{{item.label}}</div>
+                    <ul role="menu">
+                        <li app-menuitem *ngFor="let child of item.items" [item]="child" [index]="i" role="none"></li>
+                    </ul>
+                </li>
+                <a href="https://www.primefaces.org/primeblocks-ng/#/">
+                    <img src="assets/layout/images/{{appMain.config.dark ? 'banner-primeblocks-dark' : 'banner-primeblocks'}}.png" alt="Prime Blocks" class="w-full mt-3"/>
+                </a>
+            </ul>
+        </div>
+
+        <div class="layout-menu-container" *ngIf="isStaff">
+            <ul class="layout-menu" role="menu" (keydown)="onKeydown($event)">
+                <li app-menu class="layout-menuitem-category" *ngFor="let item of modelStaff; let i = index;" [item]="item" [index]="i" [root]="true" role="none">
                     <div class="layout-menuitem-root-text" [attr.aria-label]="item.label">{{item.label}}</div>
                     <ul role="menu">
                         <li app-menuitem *ngFor="let child of item.items" [item]="child" [index]="i" role="none"></li>
@@ -22,15 +36,62 @@ import { AppMainComponent } from './app.main.component';
 export class AppMenuComponent implements OnInit {
 
     model: any[];
+    modelStaff: any[];
+
+    isStaff: boolean;
+    isSubcontractor: boolean;
 
     constructor(public appMain: AppMainComponent) { }
 
     ngOnInit() {
+        this.isSubcontractor = true;
+
+        this.modelStaff = [
+            {
+                label: 'Home',
+                items:[
+                    {label: 'Dashboard',icon: 'pi pi-fw pi-home', routerLink: ['/']},
+                    {label: 'Profile',icon: 'pi pi-fw pi-user', routerLink: ['/profile']},
+                    {label: 'Post a Job',icon: 'pi pi-fw pi-wallet', routerLink: ['/payment']}
+                ]
+            },
+            {
+                label: 'User Panel',
+                items:[
+                    {label: 'Add users',icon: 'pi pi-fw pi-home', routerLink: ['/']},
+                    {label: 'Delete users',icon: 'pi pi-fw pi-user', routerLink: ['/profile']}
+                ]
+            },
+            {
+                label: 'Subcontractor Panel',
+                items:[
+                    {label: 'Sub-contractors',icon: 'pi pi-fw pi-user', routerLink: ['/profile']},
+                    {label: 'Approve sub-contractor',icon: 'pi pi-fw pi-home', routerLink: ['/']},
+                    {label: 'Block sub-contractor',icon: 'pi pi-fw pi-user', routerLink: ['/profile']},
+                   
+                ]
+            },
+
+            {
+                label: 'Staff Setting',
+                items:[
+                    {label: 'Staff Setting Option',icon: 'pi pi-fw pi-user', routerLink: ['/profile']},
+                   
+                ]
+            },
+
+            
+        ]
+
         this.model = [
             {
                 label: 'Home',
                 items:[
-                    {label: 'Dashboard',icon: 'pi pi-fw pi-home', routerLink: ['/']}
+                    {label: 'Dashboard',icon: 'pi pi-fw pi-home', routerLink: ['/']},
+                    {label: 'Profile',icon: 'pi pi-fw pi-user', routerLink: ['/profile']},
+                    {label: 'Payment',icon: 'pi pi-fw pi-wallet', routerLink: ['/payment']},
+                    {label: 'Bid on jobs',icon: 'pi pi-fw pi-inbox', routerLink: ['/jobslist']},
+                    {label: 'Invoices',icon: 'pi pi-fw pi-file-o', routerLink: ['/invoices']}
                 ]
             },
             {

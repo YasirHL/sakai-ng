@@ -98,7 +98,7 @@ import { AppConfigComponent } from './app.config.component';
 import { AppMenuComponent } from './app.menu.component';
 import { AppMenuitemComponent } from './app.menuitem.component';
 
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './subcontractor/dashboard/dashboard.component';
 import { FormLayoutComponent } from './components/formlayout/formlayout.component';
 import { FloatLabelComponent } from './components/floatlabel/floatlabel.component';
 import { InvalidStateComponent } from './components/invalidstate/invalidstate.component';
@@ -136,15 +136,15 @@ import { PhotoService } from './service/photoservice';
 import { ProductService } from './service/productservice';
 import { MenuService } from './service/app.menu.service';
 import { ConfigService } from './service/app.config.service';
-import { LoginComponent } from './components/login/login.component';
-import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { SignupComponent } from './authentication/signup/signup.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AccessComponent } from './components/access/access.component';
 
 import { UserProfileDetailComponent } from './components/profile/user-profile-detail';
-import { JobsListComponent } from './components/jobs/jobs-list.component';
-import { JobsDetailComponent } from './components/jobsdetail/jobs-detail.component';
+import { JobsListComponent } from './subcontractor/jobs/jobs-list.component';
+import { JobsDetailComponent } from './subcontractor/jobsdetail/jobs-detail.component';
 import { MessageService } from 'primeng/api';
 
 @NgModule({
