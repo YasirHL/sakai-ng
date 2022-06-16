@@ -142,10 +142,12 @@ import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AccessComponent } from './components/access/access.component';
 
-import { UserProfileDetailComponent } from './components/profile/user-profile-detail';
+import { UserProfileDetailComponent } from './subcontractor/profile/user-profile-detail';
 import { JobsListComponent } from './subcontractor/jobs/jobs-list.component';
 import { JobsDetailComponent } from './subcontractor/jobsdetail/jobs-detail.component';
 import { MessageService } from 'primeng/api';
+import { InvoiceComponent } from './subcontractor/invoice/invoice.component';
+import { PostjobComponent } from './staff/staff/postjob/postjob.component';
 
 @NgModule({
     imports: [
@@ -283,7 +285,9 @@ import { MessageService } from 'primeng/api';
         AccessComponent,
         UserProfileDetailComponent,
         JobsListComponent,
-        JobsDetailComponent
+        JobsDetailComponent,
+        InvoiceComponent,
+        PostjobComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

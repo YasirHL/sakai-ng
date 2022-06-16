@@ -29,9 +29,11 @@ import { SignupComponent } from './authentication/signup/signup.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AccessComponent } from './components/access/access.component';
-import { UserProfileDetailComponent } from './components/profile/user-profile-detail';
+import { UserProfileDetailComponent } from './subcontractor/profile/user-profile-detail';
 import { JobsListComponent } from './subcontractor/jobs/jobs-list.component';
 import { JobsDetailComponent } from './subcontractor/jobsdetail/jobs-detail.component';
+import { InvoiceComponent } from './subcontractor/invoice/invoice.component';
+import { PostjobComponent } from './staff/staff/postjob/postjob.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -40,6 +42,8 @@ import { JobsDetailComponent } from './subcontractor/jobsdetail/jobs-detail.comp
                 children: [
                     {path: '', component: DashboardComponent},
                     {path: 'profile', component: UserProfileDetailComponent},
+                    {path: 'invoice', component: InvoiceComponent},
+                    {path: 'postjob', component: PostjobComponent},
                     {path: 'jobslist', component: JobsListComponent},
                     {path: 'jobsdetail/:id', component: JobsDetailComponent},
                     {path: 'uikit/formlayout', component: FormLayoutComponent},

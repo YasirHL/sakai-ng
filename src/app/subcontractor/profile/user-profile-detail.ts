@@ -13,6 +13,7 @@ export class UserProfileDetailComponent implements OnInit{
     displayDetail: boolean;
     displayProfile: boolean;
     displayDocument: boolean;
+    displaySkills: boolean;
 
     constructor(
         private skillService: SkillsService,
