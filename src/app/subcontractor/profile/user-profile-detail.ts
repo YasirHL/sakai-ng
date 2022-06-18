@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 import { SkillsService } from 'src/app/service/skills.service';
 
 @Component({
@@ -15,12 +15,77 @@ export class UserProfileDetailComponent implements OnInit{
     displayDocument: boolean;
     displaySkills: boolean;
 
+    panelMenuItems: MenuItem[];
+
     constructor(
         private skillService: SkillsService,
         private messageService: MessageService
         ){ }
 
     ngOnInit(): void {
+        this.panelMenuItems = [
+            {
+                label: 'My CV',
+                items: [
+                    {
+                        label: 'CV Document',
+                        icon: 'pi pi-fw pi-plus',
+                                               
+                    },
+                    {
+                        label: 'Edit',
+                        icon: 'pi pi-fw pi-user-edit'
+                    }
+                ]
+            },
+            {
+                label: 'Insurance',
+                items: [
+                    {
+                        label: 'View',
+                        icon: 'pi pi-fw pi-list'
+                    },
+                    {
+                        label: 'Search',
+                        icon: 'pi pi-fw pi-search'
+                    }
+        
+                ]
+            },
+            {
+                label: 'Qualification',
+                items: [
+                    {
+                        label: 'Tracker',
+                        icon: 'pi pi-fw pi-compass',
+        
+                    },
+                    {
+                        label: 'Map',
+                        icon: 'pi pi-fw pi-map-marker',
+        
+                    },
+                    {
+                        label: 'Manage',
+                        icon: 'pi pi-fw pi-pencil'
+                    }
+                ]
+            },
+            {
+                label: 'Profile',
+                items: [
+                    {
+                        label: 'Settings',
+                        icon: 'pi pi-fw pi-cog'
+                    },
+                    {
+                        label: 'Billing',
+                        icon: 'pi pi-fw pi-file'
+                    }
+                ]
+            }
+        ];
+
         this.skillService.getSkills().then(skills => {
             this.skills = skills;
     });}
@@ -33,4 +98,6 @@ export class UserProfileDetailComponent implements OnInit{
 
     this.messageService.add({severity: 'info', summary: 'Success', detail: 'File Uploaded'});
 }
+
+
 }

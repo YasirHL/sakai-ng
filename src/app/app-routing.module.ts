@@ -34,6 +34,9 @@ import { JobsListComponent } from './subcontractor/jobs/jobs-list.component';
 import { JobsDetailComponent } from './subcontractor/jobsdetail/jobs-detail.component';
 import { InvoiceComponent } from './subcontractor/invoice/invoice.component';
 import { PostjobComponent } from './staff/staff/postjob/postjob.component';
+import { SubcontractorsComponent } from './staff/staff/subcontractors/subcontractors.component';
+import { UsersComponent } from './staff/staff/users/users.component';
+import { StaffSettingComponent } from './staff/staff/staff-setting/staff-setting.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -41,11 +44,18 @@ import { PostjobComponent } from './staff/staff/postjob/postjob.component';
                 path: '', component: AppMainComponent,
                 children: [
                     {path: '', component: DashboardComponent},
+
                     {path: 'profile', component: UserProfileDetailComponent},
-                    {path: 'invoice', component: InvoiceComponent},
-                    {path: 'postjob', component: PostjobComponent},
                     {path: 'jobslist', component: JobsListComponent},
                     {path: 'jobsdetail/:id', component: JobsDetailComponent},
+                    {path: 'invoices', component: InvoiceComponent},
+                    {path: 'invoice/:id', component: InvoiceComponent},
+
+                    {path: 'postjob', component: PostjobComponent},
+                    {path: 'subcontractors', component: SubcontractorsComponent},
+                    {path: 'users', component: UsersComponent},
+                    {path: 'staff-setting', component: StaffSettingComponent},
+
                     {path: 'uikit/formlayout', component: FormLayoutComponent},
                     {path: 'uikit/input', component: InputComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelComponent},

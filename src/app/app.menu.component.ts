@@ -30,7 +30,7 @@ export class AppMenuComponent implements OnInit {
     constructor(public appMain: AppMainComponent) { }
 
     ngOnInit() {
-        this.isSubcontractor = false;
+        this.isSubcontractor = true;
 
         if(this.isSubcontractor){
             this.model = [
@@ -153,30 +153,22 @@ export class AppMenuComponent implements OnInit {
                 items:[
                     {label: 'Dashboard',icon: 'pi pi-fw pi-home', routerLink: ['/']},
                     {label: 'Profile',icon: 'pi pi-fw pi-user', routerLink: ['/profile']},
-                    {label: 'Post a Job',icon: 'pi pi-fw pi-wallet', routerLink: ['/postjob']}
+               
                 ]
             },
             {
-                label: 'User Panel',
+                label: 'Rights/Privileges',
                 items:[
-                    {label: 'Add users',icon: 'pi pi-fw pi-home', routerLink: ['/addusers']},
-                    {label: 'Delete users',icon: 'pi pi-fw pi-user', routerLink: ['/deleteusers']}
+                    {label: 'Post a Job',icon: 'pi pi-fw pi-wallet', routerLink: ['/postjob']},
+                    {label: 'Users',icon: 'pi pi-fw pi-user', routerLink: ['/users']},
+                    {label: 'Subcontractors',icon: 'pi pi-fw pi-users', routerLink: ['/subcontractors']}
                 ]
-            },
-            {
-                label: 'Subcontractor Panel',
-                items:[
-                    {label: 'Sub-contractors',icon: 'pi pi-fw pi-user', routerLink: ['/subcontractors']},
-                    {label: 'Approve sub-contractor',icon: 'pi pi-fw pi-home', routerLink: ['/approvesubcontractor']},
-                    {label: 'Block sub-contractor',icon: 'pi pi-fw pi-user', routerLink: ['/blocksubcontractor']},
-                   
-                ]
-            },
+            },      
 
             {
                 label: 'Staff Setting',
                 items:[
-                    {label: 'Staff Setting Option',icon: 'pi pi-fw pi-user', routerLink: ['/staff']},
+                    {label: 'Staff Setting Option',icon: 'pi pi-fw pi-cog', routerLink: ['/staff-setting']},
                    
                 ]
             },

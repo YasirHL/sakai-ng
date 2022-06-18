@@ -1,12 +1,11 @@
 <div class="grid">
     <div class="col-12">
         <div class="card">
-            <h5><i class="pi pi-eye mr-2"></i> Manage Jobs</h5>
             <p-toast></p-toast>
             <p-toolbar styleClass="mb-4">
                 <ng-template pTemplate="left">
                     <div class="my-2">
-                        <button pButton pRipple label="Add New Job" icon="pi pi-plus" class="p-button-success mr-2"
+                        <button pButton pRipple label="Add new user" icon="pi pi-plus" class="p-button-success mr-2"
                             (click)="openNew()"></button>
                         <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
                             (click)="deleteSelectedProducts()"
@@ -22,8 +21,6 @@
                 </ng-template>
             </p-toolbar>
 
-           
-
             <p-table #dt [value]="products" [columns]="cols" responsiveLayout="scroll" [rows]="10"
                 [globalFilterFields]="['name','country.name','representative.name','status']" [rows]="10"
                 [paginator]="true" [rowsPerPageOptions]="[10,20,30]" [showCurrentPageReport]="true"
@@ -31,7 +28,7 @@
                 [(selection)]="selectedProducts" selectionMode="multiple" [rowHover]="true" dataKey="id">
                 <ng-template pTemplate="caption">
                     <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
-                        <h5 class="m-0">List of Jobs</h5>
+                        <h5 class="m-0">Manage Products</h5>
                         <span class="block mt-2 md:mt-0 p-input-icon-left">
                             <i class="pi pi-search"></i>
                             <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
@@ -44,20 +41,20 @@
                         <th style="width: 3rem">
                             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                         </th>
-                        <th pSortableColumn="price">Date <p-sortIcon field="price"></p-sortIcon>
+                        <th pSortableColumn="code">Code <p-sortIcon field="code"></p-sortIcon>
                         </th>
-                        <th pSortableColumn="code">Title <p-sortIcon field="code"></p-sortIcon>
+                        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon>
                         </th>
-                        <th pSortableColumn="name">Requirement<p-sortIcon field="name"></p-sortIcon>
+                        <th>Image</th>
+                        <th pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon>
                         </th>
-                        <th>Price Offer</th>
-
-                        <th pSortableColumn="category"> Description<p-sortIcon field="category"></p-sortIcon>
+                        <th pSortableColumn="category">Category <p-sortIcon field="category"></p-sortIcon>
                         </th>
-
-                        <th pSortableColumn="inventoryStatus">File <p-sortIcon field="inventoryStatus"></p-sortIcon>
+                        <th pSortableColumn="rating">Reviews <p-sortIcon field="rating"></p-sortIcon>
                         </th>
-                        <th>Actions</th>
+                        <th pSortableColumn="inventoryStatus">Status <p-sortIcon field="inventoryStatus"></p-sortIcon>
+                        </th>
+                        <th></th>
                     </tr>
                 </ng-template>
                 <ng-template pTemplate="body" let-product>
@@ -84,9 +81,9 @@
                             <span class="p-column-title">Category</span>
                             {{product.category}}
                         </td>
-                        <!-- <td style="width:14%; min-width: 10rem;"><span class="p-column-title">Reviews</span>
+                        <td style="width:14%; min-width: 10rem;"><span class="p-column-title">Reviews</span>
                             <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
-                        </td> -->
+                        </td>
                         <td style="width:14%; min-width: 10rem;"><span class="p-column-title">Status</span>
                             <span
                                 [class]="'product-badge status-' + (product.inventoryStatus ? product.inventoryStatus.toLowerCase() : '')">{{product.inventoryStatus}}</span>
@@ -107,13 +104,8 @@
 
         <p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Job Details" [modal]="true"
             class="p-fluid">
-
-            <ng-template pTemplate="content">                
-
-            <p-tabView orientation="left">
-                <p-tabPanel header="Job Details" class="line-height-3 m-0">
-
-                    <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.image" width="150"
+            <ng-template pTemplate="content">
+                <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.image" width="150"
                     class="mt-0 mx-auto mb-5 block shadow-2" *ngIf="product.image">
                 <div class="field">
                     <label for="name">Title</label>
@@ -147,21 +139,21 @@
                         </ng-template>
                     </p-multiSelect>
                 </div>
+              
+                    <div class="field">
+                        <label for="start-date-time">Start Date & Time</label>
+                        <input type="datetime-local" pInputText id="start-date-time" required autofocus
+                            [ngClass]="{'ng-invalid ng-dirty' : submitted && !product.name}" />
+                        <small class="ng-dirty ng-invalid" *ngIf="submitted && !product.name">Date is required.</small>
+                    </div>
 
-                <div class="field">
-                    <label for="start-date-time">Start Date & Time</label>
-                    <input type="datetime-local" pInputText id="start-date-time" required autofocus
-                        [ngClass]="{'ng-invalid ng-dirty' : submitted && !product.name}" />
-                    <small class="ng-dirty ng-invalid" *ngIf="submitted && !product.name">Date is required.</small>
-                </div>
-
-                <div class="field">
-                    <label for="end-date-time">Delivery Date & Time</label>
-                    <input type="datetime-local" pInputText id="end-date-time" required autofocus
-                        [ngClass]="{'ng-invalid ng-dirty' : submitted && !product.name}" />
-                    <small class="ng-dirty ng-invalid" *ngIf="submitted && !product.name">Date is required.</small>
-                </div>
-
+                    <div class="field">
+                        <label for="end-date-time">End Date & Time</label>
+                        <input type="datetime-local" pInputText id="end-date-time" required autofocus
+                            [ngClass]="{'ng-invalid ng-dirty' : submitted && !product.name}" />
+                        <small class="ng-dirty ng-invalid" *ngIf="submitted && !product.name">Date is required.</small>
+                    </div>
+              
                 <div class="field">
                     <label for="name">Price Offer</label>
                     <input type="number" pInputText id="name" required autofocus
@@ -170,65 +162,20 @@
                 </div>
 
                 <div class="field">
-					<label htmlFor="state">Urgency</label>
-					<p-dropdown [options]="urgencyLevels" optionLabel="name" [(ngModel)]="selectedUrgency"></p-dropdown>
-				</div>
-
-                <div class="field">
                     <label for="description">Special Requirements Space</label>
-                    <textarea id="description" pInputTextarea required rows="3" cols="20"></textarea>
+                    <textarea id="description" pInputTextarea required rows="3"
+                        cols="20"></textarea>
                 </div>
 
                 <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)" multiple="multiple"
-                    accept="image/*" maxFileSize="1000000">
-                    <ng-template pTemplate="files">
-                        <ul *ngIf="uploadedFiles.length">
-                            <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-                        </ul>
-                    </ng-template>
-                </p-fileUpload>
-                <br />
-                </p-tabPanel>                
-
-                <p-tabPanel header="User Details" class="line-height-3 m-0">
-                          
-                <div class="p-fluid p-formgrid grid">
-
-                    <div class="field col-12 md:col-6">
-                        <label htmlFor="name">Name</label>
-                        <input pInputText id="name" type="text" />
-                    </div>
-                    <div class="field col-12 md:col-6">
-                        <label htmlFor="email">Email</label>
-                        <input pInputText id="email" type="email" />
-                    </div>
-                    <div class="field col-12 md:col-12">
-                        <label htmlFor="mobile">Mobile</label>
-                        <input id="mobile" pInputText type="number" />
-                    
-                    </div>
-                    <div class="field col-12">
-                        <label htmlFor="address">Address</label>
-                        <textarea id="address" pInputTextarea required rows="3" cols="20"></textarea>
-                    </div>
-                    <div class="field col-12 md:col-6">
-                        <label htmlFor="postalcode">Postal Code</label>
-                        <input pInputText id="postalcode" type="text" />
-                    </div>
-                    <div class="field col-12 md:col-6">
-                        <label htmlFor="landline">Landline</label>
-                        <input pInputText id="landline" type="number" />
-                    </div>
-
-                    <div class="col-12 md:col-12 field-checkbox mb-0">
-                        <p-checkbox name="agreement" value="agreement" [(ngModel)]="valCheck" id="agreement">
-                        </p-checkbox>
-                        <label for="agreement">Show the customer details</label>
-                    </div>  
-                
-                </div>
-                </p-tabPanel>
-            </p-tabView>                   
+                accept="image/*" maxFileSize="1000000">
+                <ng-template pTemplate="files">
+                    <ul *ngIf="uploadedFiles.length">
+                        <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                    </ul>
+                </ng-template>
+            </p-fileUpload>           
+            
             </ng-template>
 
             <ng-template pTemplate="footer">

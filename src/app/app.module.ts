@@ -145,9 +145,13 @@ import { AccessComponent } from './components/access/access.component';
 import { UserProfileDetailComponent } from './subcontractor/profile/user-profile-detail';
 import { JobsListComponent } from './subcontractor/jobs/jobs-list.component';
 import { JobsDetailComponent } from './subcontractor/jobsdetail/jobs-detail.component';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { InvoiceComponent } from './subcontractor/invoice/invoice.component';
 import { PostjobComponent } from './staff/staff/postjob/postjob.component';
+import { InvoiceDetailComponent } from './subcontractor/invoice/invoice-detail/invoice-detail.component';
+import { UsersComponent } from './staff/staff/users/users.component';
+import { SubcontractorsComponent } from './staff/staff/subcontractors/subcontractors.component';
+import { StaffSettingComponent } from './staff/staff/staff-setting/staff-setting.component';
 
 @NgModule({
     imports: [
@@ -287,10 +291,15 @@ import { PostjobComponent } from './staff/staff/postjob/postjob.component';
         JobsListComponent,
         JobsDetailComponent,
         InvoiceComponent,
-        PostjobComponent
+        PostjobComponent,
+        InvoiceDetailComponent,
+        UsersComponent,
+        SubcontractorsComponent,
+        StaffSettingComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
+        ConfirmationService,
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MenuService, ConfigService, MessageService
     ],

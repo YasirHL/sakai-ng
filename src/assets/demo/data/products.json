@@ -9,7 +9,7 @@
 			"price": 65,
 			"category": "Accessories",
 			"quantity": 24,
-			"inventoryStatus": "Pending",
+			"inventoryStatus": "Approved",
 			"rating": 5,
 			"date": "6-6-2022"
 		},
@@ -22,7 +22,7 @@
 			"price": 72,
 			"category": "Accessories",
 			"quantity": 61,
-			"inventoryStatus": "OUTOFSTOCK",
+			"inventoryStatus": "Pending",
 			"rating": 4,
 			"date": "7-7-2022"
 		},
@@ -35,7 +35,7 @@
 			"price": 79,
 			"category": "Fitness",
 			"quantity": 2,
-			"inventoryStatus": "LOWSTOCK",
+			"inventoryStatus": "Pending",
 			"rating": 3
 		},
 		{
@@ -47,7 +47,7 @@
 			"price": 29,
 			"category": "Clothing",
 			"quantity": 25,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "Pending",
 			"rating": 5
 		},
 		{
@@ -59,7 +59,7 @@
 			"price": 15,
 			"category": "Accessories",
 			"quantity": 73,
-			"inventoryStatus": "INSTOCK",
+			"inventoryStatus": "Pending",
 			"rating": 4
 		},
 		{

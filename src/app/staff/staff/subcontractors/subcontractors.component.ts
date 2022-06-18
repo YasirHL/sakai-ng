@@ -5,12 +5,11 @@ import { ProductService } from 'src/app/service/productservice';
 import { SkillsService } from 'src/app/service/skills.service';
 
 @Component({
-  selector: 'app-postjob',
-//   providers: [MessageService, ConfirmationService],
-  templateUrl: './postjob.component.html',
-  styleUrls: ['./postjob.component.scss']
+  selector: 'app-subcontractors',
+  templateUrl: './subcontractors.component.html',
+  styleUrls: ['./subcontractors.component.scss']
 })
-export class PostjobComponent implements OnInit {
+export class SubcontractorsComponent implements OnInit {
 
   productDialog: boolean;
 
@@ -28,16 +27,12 @@ export class PostjobComponent implements OnInit {
 
   cols: any[];
 
-  urgencyLevels: any[];
-
   statuses: any[];
 
   rowsPerPageOptions = [5, 10, 20];
 
-  selectedUrgency:any;
-    
-
   //Important fields
+
   categories: any;
   constructor(private productService: ProductService, 
               private messageService: MessageService,
@@ -53,14 +48,9 @@ export class PostjobComponent implements OnInit {
           {field: 'price', header: 'Price'},
           {field: 'category', header: 'Category'},
           {field: 'rating', header: 'Reviews'},
-          {field: 'inventoryStatus', header: 'Status'}
+          {field: 'inventoryStatus', header: 'Status'},
+          {field: '', header: 'See Qualification '}  
       ];
-
-      this.urgencyLevels = [
-        { name: 'Low' },
-        { name: 'Medium'},
-        { name: 'Hight'}
-    ];
 
       this.statuses = [
           {label: 'INSTOCK', value: 'instock'},
