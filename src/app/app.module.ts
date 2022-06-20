@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-
 import { StyleClassModule } from 'primeng/styleclass';
 import { AccordionModule } from 'primeng/accordion';
 import { AutoCompleteModule } from 'primeng/autocomplete';
@@ -88,7 +87,6 @@ import { TreeSelectModule } from 'primeng/treeselect';
 import { TreeTableModule } from 'primeng/treetable';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { BlockViewer } from './components/blockviewer/blockviewer.component';
- 
 import { AppCodeModule } from './components/app-code/app.code.component';
 import { AppComponent } from './app.component';
 import { AppMainComponent } from './app.main.component';
@@ -97,7 +95,6 @@ import { AppFooterComponent } from './app.footer.component';
 import { AppConfigComponent } from './app.config.component';
 import { AppMenuComponent } from './app.menu.component';
 import { AppMenuitemComponent } from './app.menuitem.component';
-
 import { DashboardComponent } from './subcontractor/dashboard/dashboard.component';
 import { FormLayoutComponent } from './components/formlayout/formlayout.component';
 import { FloatLabelComponent } from './components/floatlabel/floatlabel.component';
@@ -147,11 +144,18 @@ import { JobsListComponent } from './subcontractor/jobs/jobs-list.component';
 import { JobsDetailComponent } from './subcontractor/jobsdetail/jobs-detail.component';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { InvoiceComponent } from './subcontractor/invoice/invoice.component';
-import { PostjobComponent } from './staff/staff/postjob/postjob.component';
+import { PostjobComponent } from './staff/postjob/postjob.component';
 import { InvoiceDetailComponent } from './subcontractor/invoice/invoice-detail/invoice-detail.component';
-import { UsersComponent } from './staff/staff/users/users.component';
-import { SubcontractorsComponent } from './staff/staff/subcontractors/subcontractors.component';
-import { StaffSettingComponent } from './staff/staff/staff-setting/staff-setting.component';
+import { UsersComponent } from './staff/users/users.component';
+import { SubcontractorsComponent } from './staff/subcontractors/subcontractors.component';
+import { StaffSettingComponent } from './staff/staff-setting/staff-setting.component';
+import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AdminPostsComponent } from './admin/admin-posts/admin-posts.component';
+import { AdminStaffComponent } from './admin/admin-staff/admin-staff.component';
+import { AdminSubcontractorsComponent } from './admin/admin-subcontractors/admin-subcontractors.component';
+import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
+import { BankAccountComponent } from './subcontractor/bank-account/bank-account.component';
 
 @NgModule({
     imports: [
@@ -295,7 +299,14 @@ import { StaffSettingComponent } from './staff/staff/staff-setting/staff-setting
         InvoiceDetailComponent,
         UsersComponent,
         SubcontractorsComponent,
-        StaffSettingComponent
+        StaffSettingComponent,
+        AdminProfileComponent,
+        AdminDashboardComponent,
+        AdminPostsComponent,
+        AdminStaffComponent,
+        AdminSubcontractorsComponent,
+        AdminSettingsComponent,
+        BankAccountComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

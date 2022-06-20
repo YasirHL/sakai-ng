@@ -33,10 +33,11 @@ import { UserProfileDetailComponent } from './subcontractor/profile/user-profile
 import { JobsListComponent } from './subcontractor/jobs/jobs-list.component';
 import { JobsDetailComponent } from './subcontractor/jobsdetail/jobs-detail.component';
 import { InvoiceComponent } from './subcontractor/invoice/invoice.component';
-import { PostjobComponent } from './staff/staff/postjob/postjob.component';
-import { SubcontractorsComponent } from './staff/staff/subcontractors/subcontractors.component';
-import { UsersComponent } from './staff/staff/users/users.component';
-import { StaffSettingComponent } from './staff/staff/staff-setting/staff-setting.component';
+import { PostjobComponent } from './staff/postjob/postjob.component';
+import { SubcontractorsComponent } from './staff/subcontractors/subcontractors.component';
+import { UsersComponent } from './staff/users/users.component';
+import { StaffSettingComponent } from './staff/staff-setting/staff-setting.component';
+import { BankAccountComponent } from './subcontractor/bank-account/bank-account.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -50,10 +51,13 @@ import { StaffSettingComponent } from './staff/staff/staff-setting/staff-setting
                     {path: 'jobsdetail/:id', component: JobsDetailComponent},
                     {path: 'invoices', component: InvoiceComponent},
                     {path: 'invoice/:id', component: InvoiceComponent},
+                    {path: 'bank-account', component: BankAccountComponent},
 
                     {path: 'postjob', component: PostjobComponent},
                     {path: 'subcontractors', component: SubcontractorsComponent},
                     {path: 'users', component: UsersComponent},
+
+
                     {path: 'staff-setting', component: StaffSettingComponent},
 
                     {path: 'uikit/formlayout', component: FormLayoutComponent},
