@@ -35,9 +35,14 @@ import { JobsDetailComponent } from './subcontractor/jobsdetail/jobs-detail.comp
 import { InvoiceComponent } from './subcontractor/invoice/invoice.component';
 import { PostjobComponent } from './staff/postjob/postjob.component';
 import { SubcontractorsComponent } from './staff/subcontractors/subcontractors.component';
-import { UsersComponent } from './staff/users/users.component';
 import { StaffSettingComponent } from './staff/staff-setting/staff-setting.component';
 import { BankAccountComponent } from './subcontractor/bank-account/bank-account.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AdminPostsComponent } from './admin/admin-posts/admin-posts.component';
+import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.component';
+import { AdminSubcontractorsComponent } from './admin/admin-subcontractors/admin-subcontractors.component';
+import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
+import { AdminStaffComponent } from './admin/admin-staff/admin-staff.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -45,6 +50,13 @@ import { BankAccountComponent } from './subcontractor/bank-account/bank-account.
                 path: '', component: AppMainComponent,
                 children: [
                     {path: '', component: DashboardComponent},
+
+                    {path: 'admin-dashboard', component: AdminDashboardComponent},
+                    {path: 'admin-posts', component: AdminPostsComponent},
+                    {path: 'admin-profile', component: AdminProfileComponent},
+                    {path: 'admin-settings', component: AdminSettingsComponent},
+                    {path: 'admin-subcontractors', component: AdminSubcontractorsComponent},
+                    {path: 'admin-staff', component: AdminStaffComponent},
 
                     {path: 'profile', component: UserProfileDetailComponent},
                     {path: 'jobslist', component: JobsListComponent},
@@ -55,7 +67,6 @@ import { BankAccountComponent } from './subcontractor/bank-account/bank-account.
 
                     {path: 'postjob', component: PostjobComponent},
                     {path: 'subcontractors', component: SubcontractorsComponent},
-                    {path: 'users', component: UsersComponent},
 
 
                     {path: 'staff-setting', component: StaffSettingComponent},

@@ -146,7 +146,6 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { InvoiceComponent } from './subcontractor/invoice/invoice.component';
 import { PostjobComponent } from './staff/postjob/postjob.component';
 import { InvoiceDetailComponent } from './subcontractor/invoice/invoice-detail/invoice-detail.component';
-import { UsersComponent } from './staff/users/users.component';
 import { SubcontractorsComponent } from './staff/subcontractors/subcontractors.component';
 import { StaffSettingComponent } from './staff/staff-setting/staff-setting.component';
 import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
@@ -297,7 +296,6 @@ import { BankAccountComponent } from './subcontractor/bank-account/bank-account.
         InvoiceComponent,
         PostjobComponent,
         InvoiceDetailComponent,
-        UsersComponent,
         SubcontractorsComponent,
         StaffSettingComponent,
         AdminProfileComponent,

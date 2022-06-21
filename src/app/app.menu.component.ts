@@ -39,24 +39,11 @@ export class AppMenuComponent implements OnInit {
                 {
                     label: 'Home-admin',
                     items:[
-                        {label: 'Dashboard',icon: 'pi pi-fw pi-home', routerLink: ['/']},
-                        {label: 'Profile',icon: 'pi pi-fw pi-user', routerLink: ['/profile']},
-
-
-                        {
-                            label: 'Payment',icon: 'pi pi-fw pi-wallet', routerLink: ['/payment'],
-                            items: [
-                                {
-                                    label: 'Bank Account', icon: 'pi pi-credit-card', routerLink: ['/bank-account']
-                                },
-                                {
-                                    label: 'Invoices', icon: 'pi pi-book', routerLink: ['/invoices']
-                                }
-                            ]
-                        },
-
-
-                        {label: 'Bid on jobs',icon: 'pi pi-fw pi-inbox', routerLink: ['/jobslist']},
+                        {label: 'Dashboard',icon: 'pi pi-fw pi-home', routerLink: ['/admin-dashboard']},
+                        {label: 'Profile',icon: 'pi pi-fw pi-user', routerLink: ['/admin-profile']},
+                        {label: 'Posts',icon: 'pi pi-fw pi-wallet', routerLink: ['/admin-posts']},
+                        {label: 'Staff',icon: 'pi pi-fw pi-inbox', routerLink: ['/admin-staff']},
+                        {label: 'Subcontractors',icon: 'pi pi-fw pi-inbox', routerLink: ['/admin-subcontractors']},
                         
                     ]
                 },
@@ -305,7 +292,6 @@ export class AppMenuComponent implements OnInit {
                 label: 'Rights/Privileges',
                 items:[
                     {label: 'Post a Job',icon: 'pi pi-fw pi-wallet', routerLink: ['/postjob']},
-                    {label: 'Users',icon: 'pi pi-fw pi-user', routerLink: ['/users']},
                     {label: 'Subcontractors',icon: 'pi pi-fw pi-users', routerLink: ['/subcontractors']}
                 ]
             },      

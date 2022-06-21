@@ -6,7 +6,6 @@ import { SkillsService } from 'src/app/service/skills.service';
 
 @Component({
   selector: 'app-postjob',
-//   providers: [MessageService, ConfirmationService],
   templateUrl: './postjob.component.html',
   styleUrls: ['./postjob.component.scss']
 })
