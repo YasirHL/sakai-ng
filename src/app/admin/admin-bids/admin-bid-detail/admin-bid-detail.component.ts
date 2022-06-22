@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdminBidDetailComponent implements OnInit {
 
   display: boolean;
-  
+  acceptJobDialog: boolean = false;
   jobComplete: boolean = false;
   
   constructor() { }
@@ -16,4 +16,15 @@ export class AdminBidDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  confirmAcceptJob()
+  {
+    this.acceptJobDialog = true;
+  }
+
+  confirmJob()
+  {
+    console.log('job accepted');
+    this.acceptJobDialog = false;
+  }
 }

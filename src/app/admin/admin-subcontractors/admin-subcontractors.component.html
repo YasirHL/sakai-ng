@@ -139,64 +139,79 @@
         <p-tabView orientation="left">
             <p-tabPanel header="Subcontractor Details" class="line-height-3 m-0">
 
-                <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.image" width="150"
-                class="mt-0 mx-auto mb-5 block shadow-2" *ngIf="product.image">
-            <div class="field">
-                <label for="name">Name</label>
-                <input type="text" pInputText id="name" [(ngModel)]="product.name" required autofocus
-                    [ngClass]="{'ng-invalid ng-dirty' : submitted && !product.name}" />
-                <small class="ng-dirty ng-invalid" *ngIf="submitted && !product.name">Name is required.</small>
-            </div>
-            <div class="field">
-                <label for="description">Email</label>
-                <input type="text" pInputText id="email" required autofocus
-                [ngClass]="{'ng-invalid ng-dirty' : submitted}" />
-            </div>
+                <div class="p-fluid p-formgrid grid mt-5">
+                    <div class="field col-12 md:col-6">
+                        <label htmlFor="completename">Complete Name <span class="mandatory">*</span></label>
+                        <input pInputText id="completename" type="text" placeholder="Enter completename*" />
+                    </div>
+                  
+                    <div class="field col-6 md:col-6">
+                        <label htmlFor="email">Email <span class="mandatory">*</span></label>
+                        <input pInputTextarea id="email" type="email" placeholder="Enter Email Address*" />
+                    </div>
+                    <div class="field col-6 md:col-6">
+                        <label htmlFor="mobile">Mobile <span class="mandatory">*</span></label>
+                        <input pInputText id="mobile" type="number" placeholder="Enter Mobile Number*" />
+                    </div>
+                    <div class="field col-6 md:col-6">
+                        <label htmlFor="postalcode">Postal Code <span class="mandatory">*</span></label>
+                        <input pInputText id="postalcode" type="text" placeholder="Enter Postal Code*" />
+                    </div>
+                    <div class="field col-4 md:col-6">
+                        <label htmlFor="address">Address <span class="mandatory">*</span></label>
+                        <input pInputText id="address" type="text" placeholder="Enter your address*" />
+                    </div>
+                    <div class="field col-6 md:col-6">
+                        <label htmlFor="city">City <span class="mandatory">*</span></label>
+                        <input pInputText id="city" type="text" placeholder="Enter your city*" />
+                    </div>
+                    <div class="field col-6 md:col-6">
+                        <label htmlFor="country">Country <span class="mandatory">*</span></label>
+                        <input pInputText id="country" type="text" placeholder="Enter your country*" />
+                    </div>
 
-            <div class="field">
-                <label for="description">Mobile</label>
-                <input type="text" pInputText id="email" required autofocus
-                [ngClass]="{'ng-invalid ng-dirty' : submitted}" />
-            </div>
+                    <div class="field col-6 md:col-6">
+                        <label htmlFor="country">Radius want to cover<span class="mandatory">*</span></label>
+                        <p-dropdown [options]="radious" [(ngModel)]="selectedDrop" placeholder="Select Radius" [showClear]="true"></p-dropdown>
+                    </div>
 
-            <div class="field">
-                <label for="address">Address</label>
-                <textarea id="address" pInputTextarea [(ngModel)]="product.description" required rows="3"
-                    cols="20"></textarea>
-            </div>
+                    <div class="field col-6 md:col-6">
+                        <label htmlFor="firstname">Password <span class="mandatory">*</span></label>
+                        <p-password id="password1" [(ngModel)]="password" placeholder="Password" [toggleMask]="true" styleClass="w-full"></p-password>
+                    </div>
+                    <div class="field col-6 md:col-6">
+                        <label htmlFor="confirmpassword">Confirm Password <span class="mandatory">*</span></label>
+                        <p-password type="password" id="confirmpassword" [(ngModel)]="confirmPassword" [toggleMask]="true" placeholder="Confirm Password" styleClass="w-full"></p-password>
+                    </div>
+                    <div class="field col-12 md:col-12">
+                        <label htmlFor="skills">Select your core skill(s)<span class="mandatory">*</span></label>
+                        <p-multiSelect [options]="skills" [(ngModel)]="selectedSkills" defaultLabel="Select the Skills*"
+                            optionLabel="name" class="multiselect-custom">
+                            <ng-template let-value pTemplate="selectedItems">
+                                <div class="country-item country-item-value inline-flex align-items-center py-1 px-2 bg-primary text-primary border-round mr-2"
+                                    *ngFor="let option of selectedSkills">
+                                    <div>{{option.name}}</div>
+                                </div>
+                                <div *ngIf="!selectedMulti || selectedMulti.length === 0" class="country-placeholder">
+                                    Select your Skills here
+                                </div>
+                            </ng-template>
+                            <ng-template let-skill pTemplate="item">
+                                <div class="flex align-items-center country-item">
+                                    <div>{{skill.name}}</div>
+                                </div>
+                            </ng-template>
+                        </p-multiSelect>
+                    </div>                   
 
-            <label for="profile">Upload Prodfile</label>
-            <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
-                accept="image/*" maxFileSize="1000000">
-                <ng-template pTemplate="files">
-                    <ul *ngIf="uploadedFiles.length">
-                        <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-                    </ul>
-                </ng-template>
-            </p-fileUpload>
-            <br />
+                                      <div class="field col-12 md:col-12">
+                        <button pButton pRipple label="Sign Up" class="w-full p-3 text-xl" routerLink="../login"></button>
+
+                    </div>
+                </div>
             </p-tabPanel>                
 
-            <p-tabPanel header="Add Rights/Priviledges" class="line-height-3 m-0">
-                      
-            <div class="p-fluid p-formgrid grid">
-
-                <div class="field col-12 md:col-12">                
-                    <p-checkbox name="agreement" value="agreement" [(ngModel)]="valCheck" id="agreement" label="Can see sub-contractors' qualifications">
-                    </p-checkbox>                   
-                </div>
-
-                <div class="field col-12 md:col-12">
-                     <p-checkbox name="agreement" value="agreement" [(ngModel)]="valCheck" id="agreement" label="Can see sub-contractor details">
-                    </p-checkbox>     
-                </div>
-                <div class="field col-12 md:col-12">
-                    <p-checkbox name="agreement" value="agreement" [(ngModel)]="valCheck" id="agreement" label="Hide subcontractor data with some Subcontractor">
-                    </p-checkbox>     
-                </div>              
-               
-            </div>
-            </p-tabPanel>
+     
         </p-tabView>                   
         </ng-template>
 

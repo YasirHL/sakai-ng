@@ -157,6 +157,7 @@ import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.co
 import { BankAccountComponent } from './subcontractor/bank-account/bank-account.component';
 import { AdminBidsComponent } from './admin/admin-bids/admin-bids.component';
 import { AdminBidDetailComponent } from './admin/admin-bids/admin-bid-detail/admin-bid-detail.component';
+import { AdminPendingSubcontractorsComponent } from './admin/admin-pending-subcontractors/admin-pending-subcontractors.component';
 
 @NgModule({
     imports: [
@@ -308,7 +309,8 @@ import { AdminBidDetailComponent } from './admin/admin-bids/admin-bid-detail/adm
         AdminSettingsComponent,
         BankAccountComponent,
         AdminBidsComponent,
-        AdminBidDetailComponent
+        AdminBidDetailComponent,
+        AdminPendingSubcontractorsComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

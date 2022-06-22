@@ -45,6 +45,7 @@ import { AdminProfileComponent } from './admin/admin-profile/admin-profile.compo
 import { AdminStaffComponent } from './admin/admin-staff/admin-staff.component';
 import { AdminBidsComponent } from './admin/admin-bids/admin-bids.component';
 import { AdminBidDetailComponent } from './admin/admin-bids/admin-bid-detail/admin-bid-detail.component';
+import { AdminPendingSubcontractorsComponent } from './admin/admin-pending-subcontractors/admin-pending-subcontractors.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -61,6 +62,7 @@ import { AdminBidDetailComponent } from './admin/admin-bids/admin-bid-detail/adm
                     {path: 'admin-staff', component: AdminStaffComponent},
                     {path: 'admin-bids', component: AdminBidsComponent},
                     {path: 'admin-bid-detail/:id', component: AdminBidDetailComponent},
+                    {path: 'admin-pending-subcontractors', component: AdminPendingSubcontractorsComponent},
 
                     {path: 'profile', component: UserProfileDetailComponent},
                     {path: 'jobslist', component: JobsListComponent},

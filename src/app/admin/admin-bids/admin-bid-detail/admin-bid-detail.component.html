@@ -69,16 +69,15 @@
                                             </th>
                                         </tr>
 
-                                        <tr >
+                                        <tr>
                                             <th colspan="2" class="align-items-center text-center">
-                                                <p-button *ngIf="!jobComplete"  icon="pi pi-check-circle" label="Accept" (click)="display=true"></p-button>
-                                                <p-button *ngIf="jobComplete" icon="pi pi-check" label="Mark as complete" (click)="display=true"></p-button>
+                                                <p-button *ngIf="!jobComplete"  icon="pi pi-check-circle" label="Accept"  (click)="confirmAcceptJob()"></p-button>
+                                                <p-button *ngIf="jobComplete" icon="pi pi-check" label="Mark as complete"  (click)="confirmAcceptJob()"></p-button>
                 
                                             </th>
                                         </tr>
                                     </ng-template>
-                                </p-table>
-                                                            
+                                </p-table>                                                           
                               
                             </div>
 
@@ -131,3 +130,17 @@
 
 
 </div>
+
+
+<p-dialog [(visible)]="acceptJobDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
+    <div class="flex align-items-center justify-content-center">
+        <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
+        <span>Are you sure you want to accept selected offer?</span>
+    </div>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No"
+            (click)="acceptJobDialog = false"></button>
+        <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Yes"
+            (click)="confirmJob()"></button>
+    </ng-template>
+</p-dialog>
