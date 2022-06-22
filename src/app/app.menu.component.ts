@@ -40,10 +40,12 @@ export class AppMenuComponent implements OnInit {
                     label: 'Home-admin',
                     items:[
                         {label: 'Dashboard',icon: 'pi pi-fw pi-home', routerLink: ['/admin-dashboard']},
-                        {label: 'Profile',icon: 'pi pi-fw pi-user', routerLink: ['/admin-profile']},
+                        {label: 'All Bids',icon: 'pi pi-fw pi-inbox', routerLink: ['/admin-bids']},
                         {label: 'Posts',icon: 'pi pi-fw pi-wallet', routerLink: ['/admin-posts']},
                         {label: 'Staff',icon: 'pi pi-fw pi-inbox', routerLink: ['/admin-staff']},
                         {label: 'Subcontractors',icon: 'pi pi-fw pi-inbox', routerLink: ['/admin-subcontractors']},
+                       
+                        {label: 'Profile',icon: 'pi pi-fw pi-user', routerLink: ['/admin-profile']},
                         
                     ]
                 },

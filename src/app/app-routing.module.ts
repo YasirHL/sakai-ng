@@ -43,6 +43,8 @@ import { AdminSettingsComponent } from './admin/admin-settings/admin-settings.co
 import { AdminSubcontractorsComponent } from './admin/admin-subcontractors/admin-subcontractors.component';
 import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
 import { AdminStaffComponent } from './admin/admin-staff/admin-staff.component';
+import { AdminBidsComponent } from './admin/admin-bids/admin-bids.component';
+import { AdminBidDetailComponent } from './admin/admin-bids/admin-bid-detail/admin-bid-detail.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -57,6 +59,8 @@ import { AdminStaffComponent } from './admin/admin-staff/admin-staff.component';
                     {path: 'admin-settings', component: AdminSettingsComponent},
                     {path: 'admin-subcontractors', component: AdminSubcontractorsComponent},
                     {path: 'admin-staff', component: AdminStaffComponent},
+                    {path: 'admin-bids', component: AdminBidsComponent},
+                    {path: 'admin-bid-detail/:id', component: AdminBidDetailComponent},
 
                     {path: 'profile', component: UserProfileDetailComponent},
                     {path: 'jobslist', component: JobsListComponent},
