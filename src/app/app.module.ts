@@ -146,8 +146,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { InvoiceComponent } from './subcontractor/invoice/invoice.component';
 import { PostjobComponent } from './staff/postjob/postjob.component';
 import { InvoiceDetailComponent } from './subcontractor/invoice/invoice-detail/invoice-detail.component';
-import { SubcontractorsComponent } from './staff/subcontractors/subcontractors.component';
-import { StaffSettingComponent } from './staff/staff-setting/staff-setting.component';
+import { StaffSubcontractorsComponent } from './staff/subcontractors/staff-subcontractors.component';
 import { AdminProfileComponent } from './admin/admin-profile/admin-profile.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminPostsComponent } from './admin/admin-posts/admin-posts.component';
@@ -158,6 +157,11 @@ import { BankAccountComponent } from './subcontractor/bank-account/bank-account.
 import { AdminBidsComponent } from './admin/admin-bids/admin-bids.component';
 import { AdminBidDetailComponent } from './admin/admin-bids/admin-bid-detail/admin-bid-detail.component';
 import { AdminPendingSubcontractorsComponent } from './admin/admin-pending-subcontractors/admin-pending-subcontractors.component';
+import { ActiveWorkOrdersComponent } from './subcontractor/active-work-orders/active-work-orders.component';
+import { SubsontractorDashboardComponent } from './subcontractor/subsontractor-dashboard/subsontractor-dashboard.component';
+import { StaffProfileComponent } from './staff/staff-profile/staff-profile.component';
+import { StaffDashboardComponent } from './staff/staff-dashboard/staff-dashboard.component';
+import { ActiveOrderDetailComponent } from './subcontractor/active-work-orders/active-order-detail/active-order-detail.component';
 
 @NgModule({
     imports: [
@@ -299,8 +303,7 @@ import { AdminPendingSubcontractorsComponent } from './admin/admin-pending-subco
         InvoiceComponent,
         PostjobComponent,
         InvoiceDetailComponent,
-        SubcontractorsComponent,
-        StaffSettingComponent,
+        StaffSubcontractorsComponent,
         AdminProfileComponent,
         AdminDashboardComponent,
         AdminPostsComponent,
@@ -310,7 +313,12 @@ import { AdminPendingSubcontractorsComponent } from './admin/admin-pending-subco
         BankAccountComponent,
         AdminBidsComponent,
         AdminBidDetailComponent,
-        AdminPendingSubcontractorsComponent
+        AdminPendingSubcontractorsComponent,
+        ActiveWorkOrdersComponent,
+        SubsontractorDashboardComponent,
+        StaffProfileComponent,
+        StaffDashboardComponent,
+        ActiveOrderDetailComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},

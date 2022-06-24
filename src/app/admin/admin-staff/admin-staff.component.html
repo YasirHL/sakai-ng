@@ -180,18 +180,23 @@
             <p-tabPanel header="Add Rights/Priviledges" class="line-height-3 m-0">
                       
             <div class="p-fluid p-formgrid grid">
+                
+                <div class="field col-12 md:col-12">
+                    <p-checkbox name="payment" value="payment" [(ngModel)]="valCheck" id="agreement" label="Can mark the subcontractor's payment">
+                    </p-checkbox>     
+                </div> 
 
                 <div class="field col-12 md:col-12">                
-                    <p-checkbox name="agreement" value="agreement" [(ngModel)]="valCheck" id="agreement" label="Can see sub-contractors' qualifications">
+                    <p-checkbox name="qualification" value="qualification" [(ngModel)]="valCheck" id="agreement" label="Can see sub-contractors' qualifications">
                     </p-checkbox>                   
                 </div>
 
                 <div class="field col-12 md:col-12">
-                     <p-checkbox name="agreement" value="agreement" [(ngModel)]="valCheck" id="agreement" label="Can see sub-contractor details">
+                     <p-checkbox name="detail" value="detail" [(ngModel)]="valCheck" id="agreement" label="Can see sub-contractor details">
                     </p-checkbox>     
                 </div>
                 <div class="field col-12 md:col-12">
-                    <p-checkbox name="agreement" value="agreement" [(ngModel)]="valCheck" id="agreement" label="Hide subcontractor data with some staff">
+                    <p-checkbox name="data" value="data" [(ngModel)]="valCheck" id="agreement" label="Hide subcontractor data with some staff">
                     </p-checkbox>     
                 </div>              
                

@@ -34,8 +34,6 @@ import { JobsListComponent } from './subcontractor/jobs/jobs-list.component';
 import { JobsDetailComponent } from './subcontractor/jobsdetail/jobs-detail.component';
 import { InvoiceComponent } from './subcontractor/invoice/invoice.component';
 import { PostjobComponent } from './staff/postjob/postjob.component';
-import { SubcontractorsComponent } from './staff/subcontractors/subcontractors.component';
-import { StaffSettingComponent } from './staff/staff-setting/staff-setting.component';
 import { BankAccountComponent } from './subcontractor/bank-account/bank-account.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminPostsComponent } from './admin/admin-posts/admin-posts.component';
@@ -46,6 +44,10 @@ import { AdminStaffComponent } from './admin/admin-staff/admin-staff.component';
 import { AdminBidsComponent } from './admin/admin-bids/admin-bids.component';
 import { AdminBidDetailComponent } from './admin/admin-bids/admin-bid-detail/admin-bid-detail.component';
 import { AdminPendingSubcontractorsComponent } from './admin/admin-pending-subcontractors/admin-pending-subcontractors.component';
+import { StaffSubcontractorsComponent } from './staff/subcontractors/staff-subcontractors.component';
+import { ActiveWorkOrdersComponent } from './subcontractor/active-work-orders/active-work-orders.component';
+import { SubsontractorDashboardComponent } from './subcontractor/subsontractor-dashboard/subsontractor-dashboard.component';
+import { ActiveOrderDetailComponent } from './subcontractor/active-work-orders/active-order-detail/active-order-detail.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
@@ -54,6 +56,7 @@ import { AdminPendingSubcontractorsComponent } from './admin/admin-pending-subco
                 children: [
                     {path: '', component: DashboardComponent},
 
+                    //Admin
                     {path: 'admin-dashboard', component: AdminDashboardComponent},
                     {path: 'admin-posts', component: AdminPostsComponent},
                     {path: 'admin-profile', component: AdminProfileComponent},
@@ -64,18 +67,22 @@ import { AdminPendingSubcontractorsComponent } from './admin/admin-pending-subco
                     {path: 'admin-bid-detail/:id', component: AdminBidDetailComponent},
                     {path: 'admin-pending-subcontractors', component: AdminPendingSubcontractorsComponent},
 
+                    //Subcontractors
+                    {path: 'subcontractor-dashboard', component: SubsontractorDashboardComponent},
                     {path: 'profile', component: UserProfileDetailComponent},
                     {path: 'jobslist', component: JobsListComponent},
                     {path: 'jobsdetail/:id', component: JobsDetailComponent},
                     {path: 'invoices', component: InvoiceComponent},
                     {path: 'invoice/:id', component: InvoiceComponent},
                     {path: 'bank-account', component: BankAccountComponent},
+                    {path: 'active-work-orders', component: ActiveWorkOrdersComponent},
+                    {path: 'active-order-detail/:id', component: ActiveOrderDetailComponent},
 
+                    //Staff
                     {path: 'postjob', component: PostjobComponent},
-                    {path: 'subcontractors', component: SubcontractorsComponent},
-
-
-                    {path: 'staff-setting', component: StaffSettingComponent},
+                    {path: 'subcontractors', component: StaffSubcontractorsComponent},
+                    {path: 'staff-profile', component: StaffSubcontractorsComponent},
+                  
 
                     {path: 'uikit/formlayout', component: FormLayoutComponent},
                     {path: 'uikit/input', component: InputComponent},

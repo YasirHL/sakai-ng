@@ -26,5 +26,11 @@ export class AdminBidDetailComponent implements OnInit {
   {
     console.log('job accepted');
     this.acceptJobDialog = false;
+    this.jobComplete=true;
+  }
+
+  confirmCompleteJob(label: string)
+  {
+    console.log('job completed');
   }
 }

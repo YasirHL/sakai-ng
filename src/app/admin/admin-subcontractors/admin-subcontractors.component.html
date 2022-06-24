@@ -11,7 +11,7 @@
                         (click)="openNew()"></button>
 
                             <button pButton pRipple label="Block" icon="pi pi-exclamation-triangle" class="p-button-warning mr-2"
-                            (click)="openNew()"  [disabled]="!selectedProducts || !selectedProducts.length"></button>
+                            (click)="deleteProductDialog=true"  [disabled]="!selectedProducts || !selectedProducts.length"></button>
 
                         <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger"
                             (click)="deleteSelectedProducts()"
@@ -108,7 +108,7 @@
         <p-dialog [(visible)]="deleteProductDialog" header="Confirm" [modal]="true" [style]="{width:'450px'}">
             <div class="flex align-items-center justify-content-center">
                 <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem"></i>
-                <span *ngIf="product">Are you sure you want to delete <b>{{product.name}}</b>?</span>
+                <span>Are you sure you want to Block?</span>
             </div>
             <ng-template pTemplate="footer">
                 <button pButton pRipple icon="pi pi-times" class="p-button-text" label="No"
@@ -154,8 +154,8 @@
                         <input pInputText id="mobile" type="number" placeholder="Enter Mobile Number*" />
                     </div>
                     <div class="field col-6 md:col-6">
-                        <label htmlFor="postalcode">Postal Code <span class="mandatory">*</span></label>
-                        <input pInputText id="postalcode" type="text" placeholder="Enter Postal Code*" />
+                        <label htmlFor="postalcode">Post Code <span class="mandatory">*</span></label>
+                        <input pInputText id="postalcode" type="text" placeholder="Enter Post Code*" />
                     </div>
                     <div class="field col-4 md:col-6">
                         <label htmlFor="address">Address <span class="mandatory">*</span></label>

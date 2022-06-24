@@ -6,10 +6,10 @@ import { SkillsService } from 'src/app/service/skills.service';
 
 @Component({
   selector: 'app-subcontractors',
-  templateUrl: './subcontractors.component.html',
-  styleUrls: ['./subcontractors.component.scss']
+  templateUrl: './staff-subcontractors.component.html',
+  styleUrls: ['./staff-subcontractors.component.scss']
 })
-export class SubcontractorsComponent implements OnInit {
+export class StaffSubcontractorsComponent implements OnInit {
 
   productDialog: boolean;
 

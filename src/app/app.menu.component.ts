@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppMainComponent } from './app.main.component';
 
 @Component({
@@ -28,11 +29,13 @@ export class AppMenuComponent implements OnInit {
     isSubcontractor: boolean;
     isAdmin: boolean;
 
-    constructor(public appMain: AppMainComponent) { }
+    constructor(public appMain: AppMainComponent, public _router: Router) {
+    
+     }
 
     ngOnInit() {
         this.isSubcontractor = false;
-        this.isAdmin = true;
+        this.isAdmin = false;
 
         if(this.isAdmin){
             this.model = [
@@ -44,6 +47,11 @@ export class AppMenuComponent implements OnInit {
                             label: 'All Bids',icon: 'pi pi-fw pi-inbox', routerLink: ['/admin-bids']
                     
                         },
+                        {
+                            label: 'Jobs in progress',icon: 'pi pi-fw pi-inbox', routerLink: ['/admin-jobs-progress']
+                    
+                        },
+                       
                         {label: 'Posts',icon: 'pi pi-fw pi-wallet', routerLink: ['/admin-posts']},
                         {label: 'Staff',icon: 'pi pi-fw pi-inbox', routerLink: ['/admin-staff']},
                         {label: 'Subcontractors',icon: 'pi pi-fw pi-inbox', routerLink: ['/admin-subcontractors']},
@@ -160,7 +168,20 @@ export class AppMenuComponent implements OnInit {
                 {
                     label: 'Home-Subcontractors',
                     items:[
-                        {label: 'Dashboard',icon: 'pi pi-fw pi-home', routerLink: ['/']},
+                        {label: 'Dashboard',icon: 'pi pi-fw pi-home', routerLink: ['/subcontractor-dashboard']},
+                        {label: 'Active work orders',icon: 'pi pi-fw pi-wallet', routerLink: ['/active-work-orders'],
+                           
+               
+                         items:[
+                                {
+                                    label: 'details', icon: 'pi pi-eye', routerLink: ['/active-order-detail']
+                                },
+                            ]
+
+                    
+                       
+                        },
+
                         {label: 'Profile',icon: 'pi pi-fw pi-user', routerLink: ['/profile']},
 
 
@@ -297,19 +318,10 @@ export class AppMenuComponent implements OnInit {
                 label: 'Rights/Privileges',
                 items:[
                     {label: 'Post a Job',icon: 'pi pi-fw pi-wallet', routerLink: ['/postjob']},
-                    {label: 'Subcontractors',icon: 'pi pi-fw pi-users', routerLink: ['/subcontractors']}
+                    {label: 'Subcontractors',icon: 'pi pi-fw pi-users', routerLink: ['/subcontractors']},
+                    {label: 'Subcontractors Request',icon: 'pi pi-fw pi-users', routerLink: ['/staff-subcontractors-request']}
                 ]
-            },      
-
-            {
-                label: 'Staff Setting',
-                items:[
-                    {label: 'Staff Setting Option',icon: 'pi pi-fw pi-cog', routerLink: ['/staff-setting']},
-                   
-                ]
-            },
-
-            
+            },                
         ]
     }
         
